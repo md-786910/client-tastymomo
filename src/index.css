@@ -1,4 +1,5 @@
 /* Custom CSS replacing Tailwind */
+@import "tailwindcss";
 
 :root {
   --primary-color: #ff5c00;
