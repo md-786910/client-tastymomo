@@ -1,10 +1,12 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 // import logo from '../assets/momo-logo.png';
 
 const LoginScreen = ({ onLogin }) => {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate()
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -22,6 +24,8 @@ const LoginScreen = ({ onLogin }) => {
     setTimeout(() => {
       setIsLoading(false);
       onLogin(phoneNumber);
+      // navigate('/select-cart');
+
     }, 1500);
   };
 
@@ -30,11 +34,11 @@ const LoginScreen = ({ onLogin }) => {
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <img
-            src={'https://via.placeholder.com/150?text=Tasty+Momo'}
+            // src={'https://via.placeholder.com/150?text=Tasty+Momo'}
             alt="Tasty Momo Logo"
             className="w-24 h-24 mx-auto mb-4"
             onError={(e) => {
-              e.target.src = 'https://via.placeholder.com/150?text=Tasty+Momo';
+              // e.target.src = 'https://via.placeholder.com/150?text=Tasty+Momo';
             }}
           />
           <h1 className="text-3xl font-bold text-primary">Tasty Momo</h1>

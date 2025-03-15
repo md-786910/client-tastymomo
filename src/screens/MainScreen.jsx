@@ -159,6 +159,8 @@ const MainScreen = () => {
     ? momos
     : momos.filter(momo => momo.type === selectedTab);
   return (
+
+
     <Wrappper>
       <Header />
       {orderSuccess && (
@@ -168,15 +170,13 @@ const MainScreen = () => {
       )}
       <OfferCards />
       <TabsFilter selectedTab={selectedTab} onTabChange={setSelectedTab} />
+
       {filteredMomos.length > 0 && (
         <FeaturedMomo
           momo={filteredMomos[0]}
           onOrderClick={handleOrderClick}
         />
       )}
-
-
-
       <MomoGrid
         momos={momos}
         onOrderClick={handleOrderClick}
